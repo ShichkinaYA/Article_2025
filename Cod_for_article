@@ -1,0 +1,52 @@
+Input: V1, V2, last, first
+Output: path and min_lt
+// block 1. subtracting lists
+V = V1 - V2 
+N = len(V)
+while N>0 do
+// 2. Clearing V from fragments of the path that do not start from the initial vertex
+for iϵ{1..N} do
+        if Vi.first_vertix!=first then
+delete (Vi);
+         end
+end
+//3. Search for new path fragments
+// Passage through list V
+for iϵ{1.. length(V)} do 
+// Passage through list V1
+for jϵ{1.. length(V1)} do
+if Vi = V1j then
+// Searching for the continuation of the edge (V1i, V2i)
+// Passage through list V1
+for lϵ{1.. length(V1)} do
+if V2j == V1l then
+// adding an edge (V1l, V2l)  to the Path (first, V2j)
+V1_add.append(V1l)
+V2_add.append(V2l)
+# updating the path length
+lt_add.append(ltj+ltl)
+				end
+			end
+		end
+	end
+end
+//4. Removing the paths that end at the last vertex from the lists
+// Passage through list V1_add
+for iϵ{1.. length(V2_add)} do 
+if V2i == last then
+	final_path.add (V1_addi+V2_addi); final_lt.add(lt_addi)
+delete (V2_addi);
+delete (V1_addi);
+delete (lt_addi)
+	end
+end
+// 5. Looking for a minimum length path
+for iϵ{1.. length(final_lt)} do 
+	// find a minimum length path and memorize it: path and min_lt
+End
+// 6. Update V1 and V2 lists
+V1=V1_add+V1
+V2=V2_add+V2
+lt=lt_add+lt
+end
+
